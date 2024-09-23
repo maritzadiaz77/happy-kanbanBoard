@@ -35,4 +35,24 @@ function handleDrop(event, ui) {
 // Todo: when the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
 $(document).ready(function () {
 
+//add event listener to saveBtn
+//the document is searching for the id of saveBtn
+const buttonEl = document.querySelector("#saveBtn");
+//it is listening for the click
+buttonEl.addEventListener("click", function () {
+  //Window is redirecting us to index.html
+  window.location = "../Develop/index.html";
+});
+
+// Date Picker
+$( function() {
+  $( "#datepicker" ).datepicker();
+} );
+  
+
+
+
+
+
+
 });
