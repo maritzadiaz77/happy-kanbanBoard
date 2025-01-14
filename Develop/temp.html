@@ -33,31 +33,21 @@
       <p class="lead">A simple Kanban board for task management</p>
     </header>
     <div class="container">
-      <!-- class for centering button -->
       <div class="text-center mb-5">
-        <!-- Here is the button trigger modal -->
         <button
-          class="btn btn-primary"
+          class="btn btn-success"
           data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
+          data-bs-target="#formModal"
         >
           Add Task
         </button>
       </div>
       <!-- Todo: Create a modal with a form to add tasks -->
-      <!-- Modal -->
-      <div
-        class="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
+      <div class="modal" id="formModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Add a card</h5>
+              <h5 class="modal-title">Modal title</h5>
               <button
                 type="button"
                 class="close"
@@ -68,37 +58,62 @@
               </button>
             </div>
             <div class="modal-body">
-              <form>
-                <label for="addTask">Add your task!</label>
+              <form id="taskForm">
+                <div class="form-group row">
+                  <label for="tasktitle" class="col-sm-2 col-form-label"
+                    >Task Title</label
+                  >
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      class="form-control-plaintext"
+                      id="tasktitle"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="description" class="col-sm-2 col-form-label"
+                    >Description</label
+                  >
+                  <div class="col-sm-10">
+                    <input
+                      type="text"
+                      class="form-control-plaintext"
+                      id="description"
+                    />
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="taskDueDate" class="col-sm-2 col-form-label"
+                    >TaskDueDate</label
+                  >
+                  <div class="col-sm-10">
+                    <input
+                      type="date"
+                      class="form-control-plaintext"
+                      id="taskDueDate"
+                    />
+                  </div>
+                </div>
 
-                <input type="text" id="task" name="taskListItem" /><br />
-                <label for="Task Due Date">Task Due Date</label>
-                <input type="text" id="datepicker" name="taskDueDate" /><br />
-                <label for="taskDescription">Task Description</label>
-                <input
-                  type="text"
-                  id="taskDescription"
-                  name="taskDescription"
-                />
+                <button type="button" id="saveTask" class="btn btn-primary">
+                  Save changes
+                </button>
               </form>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="close"
-                id="closeBtn"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" class="btn btn-primary" id="saveBtn">
-                Save changes
-              </button>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- TODO, INPROGRESS , DONE ,COLOUmnsS -->
+
       <div class="row swim-lanes text-center justify-content-between">
         <div class="col-12 col-lg-4 d-flex">
           <div id="to-do" class="card border-light mb-3 lane flex-grow-1">
@@ -132,20 +147,25 @@
         </div>
       </div>
     </div>
-    <!-- boostrap, jquery,day js, and regular script js are connected -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script> -->
     <script
       src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
       crossorigin="anonymous"
     ></script>
-    <!-- order matters so this one goes last -->
-    <script src="./assets/js/script.js"></script>
+
+    <script src="./assets/js/index.js"></script>
   </body>
 </html>
